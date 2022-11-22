@@ -47,5 +47,21 @@ public class ClienteServiceImpl implements IClienteService {
         return cR.findByEmailCliente(email);
     }
 
+    @Override
+    public List<Cliente> buscarDominio() {
+        return cR.buscardominio();
+    }
 
+    @Override
+    public List<ClienteFrecuente>clienteFrecuente(){
+        List<ClienteFrecuente>lista=new ArrayList<>();
+            cR.clienteFrecuente().forEach(y->{
+            ClienteFrecuente c=new ClienteFrecuente();
+            c.setCliente(y[0]);
+            c.setComprobantepago(y[1]);
+            lista.add(c);
+        });
+        return lista;
+    }
 }
+
