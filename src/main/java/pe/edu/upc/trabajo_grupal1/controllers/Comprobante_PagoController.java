@@ -47,5 +47,9 @@ public class Comprobante_PagoController {
     public Optional<Comprobante_Pago> listarId(@PathVariable("id") Integer id) {
         return cService.listarId(id);
     }
-    
+        @GetMapping("/comprobantefecha")
+    public List<ComprobanteFecha>comprobanteFechas(){return cService.comprobanteF();}
+
+    @GetMapping("/comprobantemonto")
+    public List<ComprobanteMonto>comprobanteMontos(){return cService.comprobanteM();}
 }
