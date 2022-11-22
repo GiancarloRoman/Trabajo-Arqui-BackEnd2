@@ -20,5 +20,9 @@ public interface IPrendaService {
     List<Prenda> buscarMarca(String nombreMarca);
     List<Prenda> buscarTalla(String letraTalla);
 
+    List<Mayor> prendaMayor();
 
+    List<Menor> prendaMenor();
+
+    List<PrendaMarca>prendaM();
 }
