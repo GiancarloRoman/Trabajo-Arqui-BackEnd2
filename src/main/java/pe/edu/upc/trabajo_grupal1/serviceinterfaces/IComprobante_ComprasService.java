@@ -14,6 +14,8 @@ public interface IComprobante_ComprasService {
     public Optional<Comprobante_Pago> listarId(int idComprobante_Pago);
     List<Comprobante_Pago> buscarTipoComprobante(String nombrecomprobante);
     List<Comprobante_Pago> buscarRazonSocial(String nombreRazonSocial);
+    List<ComprobanteFecha>comprobanteF();
 
+    List<ComprobanteMonto>comprobanteM();
 
 }
