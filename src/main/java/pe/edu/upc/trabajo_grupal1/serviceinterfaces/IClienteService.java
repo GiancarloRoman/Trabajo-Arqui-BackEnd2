@@ -17,5 +17,5 @@ public interface IClienteService {
 
     List<Cliente> buscarDominio();
 
-
+    List<ClienteFrecuente>clienteFrecuente();
 }
