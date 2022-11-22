@@ -43,6 +43,55 @@ public class PrendaServiceImpl implements IPrendaService {
     public List<Prenda> search(String nombrePrenda) {
         return pR.searchPrenda(nombrePrenda);
     }
+ @Override
+    public List<Prenda> buscarTienda(String nombreTienda) {
+        return pR.searchTienda(nombreTienda);
+    }
+
+    @Override
+    public List<Prenda> buscarMarca(String nombreMarca) {
+        return pR.searchMarca(nombreMarca);
+    }
+
+    @Override
+    public List<Prenda> buscarTalla(String letraTalla) {
+        return pR.searchTalla(letraTalla);
+    }
+
+    @Override
+    public List<Mayor> prendaMayor(){
+        List<Mayor>lista=new ArrayList<>();
+        pR.prendaMayorPrecio().forEach(y->{
+            Mayor r=new Mayor();
+            r.setPrenda(y[0]);
+            r.setPrecio(y[1]);
+            lista.add(r);
+        });
+        return lista;
+    }
+    public List<Menor> prendaMenor(){
+        List<Menor>lista=new ArrayList<>();
+        pR.prendaMenorPrecio().forEach(y->{
+            Menor r=new Menor();
+            r.setPrenda(y[0]);
+            r.setPrecio(y[1]);
+            lista.add(r);
+        });
+        return lista;
+    }
+
+    @Override
+    public List<PrendaMarca>prendaM(){
+        List<PrendaMarca>lista=new ArrayList<>();
+            pR.prendaMarca().forEach(y->{
+            PrendaMarca p=new PrendaMarca();
+            p.setPrenda(y[0]);
+            p.setMarca(y[1]);
+            lista.add(p);
+        });
+        return lista;
+    }
+}
 
 
 }
