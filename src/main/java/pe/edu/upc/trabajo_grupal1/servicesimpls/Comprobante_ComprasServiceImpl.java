@@ -43,5 +43,32 @@ public class Comprobante_ComprasServiceImpl implements IComprobante_ComprasServi
         return cpR.searchComprobante_Pago_Tipo(nombrecomprobante);
     }
 
+@Override
+    public List<Comprobante_Pago> buscarRazonSocial(String nombreRazonSocial) {
+        return cpR.searchComprobante_Pago_Razon(nombreRazonSocial);
+    }
 
+    @Override
+    public List<ComprobanteFecha>comprobanteF(){
+        List<ComprobanteFecha>lista=new ArrayList<>();
+        cpR.comprobanteFecha().forEach(y->{
+            ComprobanteFecha c = new ComprobanteFecha();
+            c.setCantidad(y[0]);
+            c.setFecha(y[1]);
+            lista.add(c);
+        });
+        return lista;
+    }
+
+    @Override
+    public List<ComprobanteMonto>comprobanteM(){
+        List<ComprobanteMonto>lista=new ArrayList<>();
+        cpR.ComprobanteMonto().forEach(y->{
+            ComprobanteMonto c = new ComprobanteMonto();
+            c.setCantidad(y[0]);
+            c.setFecha(y[1]);
+            lista.add(c);
+        });
+        return lista;
+    }
 }
