@@ -58,5 +58,12 @@ public class PrendaController {
         return pService.listarId(id);
     }
 
+    @GetMapping("/buscarmayor")
+    public List<Mayor> prendaMayor() {return pService.prendaMayor();}
 
+    @GetMapping("/buscarmenor")
+    public List<Menor> prendaMenor() {return pService.prendaMenor();}
+
+    @GetMapping("/PrendaXmarca")
+    public List<PrendaMarca>prendaMarcas(){return pService.prendaM();}
 }
